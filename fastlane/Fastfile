@@ -56,13 +56,13 @@ platform :ios do
       key_content: "#{FASTLANE_KEY}"
     )
 
-    previous_build_number = latest_testflight_build_number(
-      app_identifier: "#{APP_IDENTIFIER}",
-      api_key: api_key,
-      team_id: "98QRA78UK7" # 新增这一行，解决多团队找不到应用
-    )
+    #previous_build_number = latest_testflight_build_number(
+      #app_identifier: "#{APP_IDENTIFIER}",
+      #api_key: api_key,
+      #team_id: "98QRA78UK7" # 新增这一行，解决多团队找不到应用
+    #)
 
-    current_build_number = previous_build_number + 1
+    current_build_number = 1
 
     increment_build_number(
       xcodeproj: "#{GITHUB_WORKSPACE}/FreeAPS.xcodeproj",
@@ -80,13 +80,13 @@ platform :ios do
       ]
     )
 
-    previous_build_number = latest_testflight_build_number(
-      app_identifier: "#{APP_IDENTIFIER}",
-      api_key: api_key,
-      team_id: "98QRA78UK7" # 新增这一行，解决多团队找不到应用
-    )
+    #previous_build_number = latest_testflight_build_number(
+     #app_identifier: "#{APP_IDENTIFIER}",
+      #api_key: api_key,
+      #team_id: "98QRA78UK7" # 新增这一行，解决多团队找不到应用
+    #)
 
-    current_build_number = previous_build_number + 1
+    current_build_number = 1
 
     increment_build_number(
       xcodeproj: "#{GITHUB_WORKSPACE}/FreeAPS.xcodeproj",
