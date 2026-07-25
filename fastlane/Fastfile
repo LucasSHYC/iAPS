@@ -56,12 +56,12 @@ platform :ios do
       key_content: "#{FASTLANE_KEY}"
     )
 
-    previous_build_number = latest_testflight_build_number(
-      app_identifier: "#{APP_IDENTIFIER}",
-      api_key: api_key,
-    )
+    #previous_build_number = latest_testflight_build_number(
+     # app_identifier: "#{APP_IDENTIFIER}",
+      #api_key: api_key,
+    #)
 
-    current_build_number = previous_build_number + 1
+    current_build_number = 1
 
     increment_build_number(
       xcodeproj: "#{GITHUB_WORKSPACE}/FreeAPS.xcodeproj",
@@ -107,12 +107,12 @@ platform :ios do
       end
     end
 
-    previous_build_number = latest_testflight_build_number(
-      app_identifier: "#{APP_IDENTIFIER}",
-      api_key: api_key,
-    )
+    #previous_build_number = latest_testflight_build_number(
+     # app_identifier: "#{APP_IDENTIFIER}",
+      #api_key: api_key,
+    #)
 
-    current_build_number = previous_build_number + 1
+    current_build_number = 1
 
     increment_build_number(
       xcodeproj: "#{GITHUB_WORKSPACE}/FreeAPS.xcodeproj",
