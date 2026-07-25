@@ -125,23 +125,11 @@ platform :ios do
     gym(
       export_method: "app-store",
       scheme: "FreeAPSWorkspace",
+      output_name: "iAPS.ipa",
       configuration: "Release",
-      clean: true,
-      export_options: {
-      compileBitcode: false,
-      uploadSymbols: true
-      }
+      destination: 'generic/platform=iOS',
+      buildlog_path: 'buildlog'
     )
-
-
-    #gym(
-      #export_method: "app-store",
-      #scheme: "FreeAPSWorkspace",
-      #output_name: "iAPS.ipa",
-      #configuration: "Release",
-      #destination: 'generic/platform=iOS',
-      #buildlog_path: 'buildlog'
-    #)
 
     copy_artifacts(
       target_path: "artifacts",
