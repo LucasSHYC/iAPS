@@ -71,12 +71,8 @@ platform :ios do
     match(
       type: "appstore",
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
-      app_identifier: [
-        "#{APP_IDENTIFIER}",
-        "#{APP_IDENTIFIER}.watchkitapp",
-        "#{APP_IDENTIFIER}.watchkitapp.watchkitextension",
-        "#{APP_IDENTIFIER}.LiveActivity"
-      ]
+      app_identifier: "ru.artpancreas.98QRA78UK7.FreeAPS", # 强制指定当前项目bundleid
+      team\_id: "98QRA78UK7"
     )
 
     # Fail fast if the App Group is not assigned to the bundle identifiers.
@@ -240,16 +236,9 @@ platform :ios do
     
     match(
       type: "appstore",
-      readonly: false,
-      force: false,
-      verbose: true,
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
-      app_identifier: [
-        "#{APP_IDENTIFIER}",
-        "#{APP_IDENTIFIER}.watchkitapp.watchkitextension",
-        "#{APP_IDENTIFIER}.watchkitapp",
-        "#{APP_IDENTIFIER}.LiveActivity"
-      ]
+      app_identifier: "ru.artpancreas.98QRA78UK7.FreeAPS", # 强制指定当前项目bundleid
+      team\_id: "98QRA78UK7"
     )
   end
 
