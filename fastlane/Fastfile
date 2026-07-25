@@ -123,16 +123,16 @@ platform :ios do
     )
 
     gym(
-      export_method: "testflight", # 关键修改
+      export_method: "app-store",
       scheme: "FreeAPSWorkspace",
-      configuration: "Release",  # TestFlight必须Release配置
-      clean: true, # 清理缓存，解决旧构建缓存报错
+      configuration: "Release",
+      clean: true,
       export_options: {
-      method: "testflight",
-      compileBitcode: false, # 新版Xcode建议关闭bitcode
+      compileBitcode: false,
       uploadSymbols: true
-  }
-)
+      }
+    )
+
 
     #gym(
       #export_method: "app-store",
