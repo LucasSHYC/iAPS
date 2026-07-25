@@ -123,7 +123,6 @@ platform :ios do
     )
 
     gym(
-      workspace: "FreeAPSWorkspace.xcworkspace", # 带上工作区避免识别失败
       export_method: "testflight", # 关键修改
       scheme: "FreeAPSWorkspace",
       configuration: "Release",  # TestFlight必须Release配置
