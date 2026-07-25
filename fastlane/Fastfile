@@ -123,13 +123,26 @@ platform :ios do
     )
 
     gym(
-      export_method: "app-store",
+      workspace: "FreeAPSWorkspace.xcworkspace", # 带上工作区避免识别失败
+      export_method: "testflight", # 关键修改
       scheme: "FreeAPSWorkspace",
-      output_name: "iAPS.ipa",
-      configuration: "Release",
-      destination: 'generic/platform=iOS',
-      buildlog_path: 'buildlog'
-    )
+      configuration: "Release",  # TestFlight必须Release配置
+      clean: true, # 清理缓存，解决旧构建缓存报错
+      export_options: {
+      method: "testflight",
+      compileBitcode: false, # 新版Xcode建议关闭bitcode
+      uploadSymbols: true
+  }
+)
+
+    #gym(
+      #export_method: "app-store",
+      #scheme: "FreeAPSWorkspace",
+      #output_name: "iAPS.ipa",
+      #configuration: "Release",
+      #destination: 'generic/platform=iOS',
+      #buildlog_path: 'buildlog'
+    #)
 
     copy_artifacts(
       target_path: "artifacts",
